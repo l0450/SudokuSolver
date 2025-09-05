@@ -24,11 +24,21 @@ public class SudokuSolver {
 		} else {
 			System.out.println("It is impossible to solve this board. We are really sorry");
 		}
+		
+		// Printing out the solved board
+		printTheBoard(board);
 
 	}
 		
-		
-	
+	// The method that helps us print the fully solved board	
+	private static void printTheBoard(int[][] sudokuBoard) {
+		for(int row = 0; row < gridsize; row++) {
+			for(int column = 0; column < gridsize; column++) {
+				System.out.print(sudokuBoard[row][column]);
+			}
+			System.out.println();
+		}
+	}
 	
 	// A method for checking a specific number in a row
 	private static boolean isNumberInRow(int[][] sudokuBoard, int number, int row) {
