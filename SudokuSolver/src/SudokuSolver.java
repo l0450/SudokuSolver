@@ -60,5 +60,31 @@ public class SudokuSolver {
 		return !isNumberInRow(sudokuBoard, number, row) && !isNumberInColumn(sudokuBoard, number, column)
 				&& !isNumberInBox(sudokuBoard, number, row, column);
 	}
+	
+	/* This method uses a backtracking algorithm to solve Sudoku by recursively
+	 * trying different numbers in different cells. All the necessary methods
+	 * should be done by now, now we can update the main method under an actual
+	 * Sudoku board. */
+	private static boolean solveTheBoard(int[][] sudokuBoard) {
+		for (int row = 0; row < gridsize; row++)  {
+			for (int column = 0; column < gridsize; column++)  {
+				if(sudokuBoard[row][column] == 0) {
+					for(int givenNumber = 1; givenNumber <= gridsize; givenNumber++) {
+						if(isPlacementValid(sudokuBoard, givenNumber, row, column)) {
+							sudokuBoard[row][column] = givenNumber;
+							
+							if(solveTheBoard(sudokuBoard)) {
+								return true;
+							} else {
+								sudokuBoard[row][column] = 0;
+							}
+						}
+					}
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 
 }
