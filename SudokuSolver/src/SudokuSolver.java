@@ -54,5 +54,11 @@ public class SudokuSolver {
 		}
 		return false;
 	}
+	
+	// isPlacementValid() returns if the number is in the valid place
+	private static boolean isPlacementValid(int[][] sudokuBoard, int number, int row, int column) {
+		return !isNumberInRow(sudokuBoard, number, row) && !isNumberInColumn(sudokuBoard, number, column)
+				&& !isNumberInBox(sudokuBoard, number, row, column);
+	}
 
 }
