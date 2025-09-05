@@ -18,8 +18,17 @@ public class SudokuSolver {
 				{0, 0, 7, 0, 4, 0, 2, 0, 3}
 		};
 		
-		
+		// If-else statement sending the message if the board can be solved
+		if(solveTheBoard(board)) {
+			System.out.println("Sudoku has been solved successfully");
+		} else {
+			System.out.println("It is impossible to solve this board. We are really sorry");
+		}
+
 	}
+		
+		
+	
 	
 	// A method for checking a specific number in a row
 	private static boolean isNumberInRow(int[][] sudokuBoard, int number, int row) {
