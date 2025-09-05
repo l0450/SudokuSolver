@@ -40,5 +40,19 @@ public class SudokuSolver {
 		}
 		return false;
 	}
+	
+	// A method for checking if a specific number is in a box
+	private static boolean isNumberInBox(int[][] sudokuBoard, int number, int row, int column) {
+		int boxRow = row - row % 3;
+		int boxColumn = column - column % 3;
+		for (int i = boxRow; i < boxRow + 3; i++)  {
+			for(int j = boxColumn; j < boxColumn + 3; j++) {
+				if(sudokuBoard[i][j] == number) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
 }
