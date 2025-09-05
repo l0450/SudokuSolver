@@ -20,5 +20,25 @@ public class SudokuSolver {
 		
 		
 	}
+	
+	// A method for checking a specific number in a row
+	private static boolean isNumberInRow(int[][] sudokuBoard, int number, int row) {
+		for (int i = 0; i < gridsize; i++)  {
+			if(sudokuBoard[row][i] == number) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	// A method for checking a specific number in a column
+	private static boolean isNumberInColumn(int[][] sudokuBoard, int number, int column) {
+		for (int i = 0; i < gridsize; i++)  {
+			if(sudokuBoard[i][column] == number) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 }
