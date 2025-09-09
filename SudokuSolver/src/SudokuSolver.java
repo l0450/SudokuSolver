@@ -49,6 +49,28 @@ public class SudokuSolver {
 		}
 		
 		printTheBoard(boardEasy);
+		
+		// Medium level board
+		
+		int[][] boardMedium = {
+				{0, 0, 6, 9, 0, 1, 0, 0, 0},
+				{8, 7, 1, 2, 0, 4, 0, 3, 5},
+				{9, 3, 0, 5, 0, 7, 1, 4, 6},
+				{0, 0, 0, 0, 1, 0, 0, 0, 2},
+				{3, 2, 0, 0, 0, 5, 0, 0, 0},
+				{0, 8, 5, 0, 0, 0, 3, 6, 0},
+				{0, 0, 8, 0, 0, 3, 0, 0, 0},
+				{0, 0, 0, 0, 7, 6, 0, 9, 3},
+				{7, 0, 0, 0, 5, 0, 2, 1, 0}
+		};
+		
+		if(solveTheBoard(boardMedium)) {
+			System.out.println("Medium level done");
+		} else {
+			System.out.println("It is impossible to solve this board. We are really sorry");
+		}
+		
+		printTheBoard(boardMedium);
 
 	}
 		
