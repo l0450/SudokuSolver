@@ -98,12 +98,26 @@ public class SudokuSolver {
 		
 	// The method that helps us print the fully solved board	
 	private static void printTheBoard(int[][] sudokuBoard) {
-		for(int row = 0; row < gridsize; row++) {
-			for(int column = 0; column < gridsize; column++) {
-				System.out.print(sudokuBoard[row][column]);
-			}
-			System.out.println();
-		}
+	    for (int row = 0; row < gridsize; row++) {
+	        if (row % 3 == 0 && row != 0) {
+	            System.out.println("------+-------+------");
+	        }
+
+	        for (int column = 0; column < gridsize; column++) {
+	            if (column % 3 == 0 && column != 0) {
+	                System.out.print(" | ");
+	            } else if (column != 0) {
+	                System.out.print(" ");
+	            }
+
+	            if (sudokuBoard[row][column] == 0) {
+	                System.out.print(".");
+	            } else {
+	                System.out.print(sudokuBoard[row][column]);
+	            }
+	        }
+	        System.out.println();
+	    }
 	}
 	
 	// A method for checking a specific number in a row
