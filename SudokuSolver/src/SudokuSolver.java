@@ -20,13 +20,35 @@ public class SudokuSolver {
 		
 		// If-else statement sending the message if the board can be solved
 		if(solveTheBoard(board)) {
-			System.out.println("Sudoku has been solved successfully");
+			System.out.println("Random sudoku has been solved successfully");
 		} else {
 			System.out.println("It is impossible to solve this board. We are really sorry");
 		}
 		
 		// Printing out the solved board
 		printTheBoard(board);
+		
+		// Easy level board
+		
+		int[][] boardEasy = {
+				{0, 0, 0, 1, 3, 2, 0, 0, 9},
+				{7, 3, 4, 0, 0, 0, 1, 0, 2},
+				{2, 0, 9, 0, 0, 4, 0, 3, 0},
+				{0, 0, 8, 4, 0, 0, 9, 0, 0},
+				{1, 0, 7, 6, 8, 3, 0, 0, 0},
+				{0, 0, 2, 9, 0, 5, 0, 8, 7},
+				{0, 0, 6, 8, 7, 0, 0, 4, 5},
+				{8, 0, 0, 3, 4, 0, 0, 0, 6},
+				{0, 7, 0, 0, 5, 0, 0, 9, 0}
+		};
+		
+		if(solveTheBoard(boardEasy)) {
+			System.out.println("Easy level done");
+		} else {
+			System.out.println("It is impossible to solve this board. We are really sorry");
+		}
+		
+		printTheBoard(boardEasy);
 
 	}
 		
